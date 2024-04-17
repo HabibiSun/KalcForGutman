@@ -6,10 +6,10 @@ public abstract class Calculations {
     static int InputNumber(){
         return 0;
     }
-    static Calculations.num_operations InputOperation()
+    static Calculations.num_operations inputOperation()
     {
 
-        System.out.println("Введите операцию: +-/* или return для возврата");
+        System.out.println("Введите операцию: +-/*");
         Scanner input = new Scanner(System.in);
         char symbol_operation = input.next().charAt(0);
 
@@ -26,36 +26,36 @@ public abstract class Calculations {
             default:
             {
                 System.out.println("Неверное значение операции");
-                return InputOperation();
+                return inputOperation();
             }
         }
 
     }
-    static int DoCalculation(int number1, num_operations operation, int number2) {
+    static int doCalculation(int number1, num_operations operation, int number2) {
 
         int newNum = 0;
 
         switch (operation){
             case SUM: {
-                newNum = Operations.Sum(number1,number2);
+                newNum = Operations.sum(number1,number2);
                 break;
             }
             case MINUS: {
-                newNum = Operations.Minus(number1,number2);
+                newNum = Operations.minus(number1,number2);
                 break;
             }
             case UMN: {
-                newNum = Operations.Umn(number1,number2);
+                newNum = Operations.umn(number1,number2);
                 break;
             }
             case DEL: {
-                newNum = Operations.Del(number1,number2);
+                newNum = Operations.del(number1,number2);
             }
         }
         return newNum;
     }
 
-    static boolean ContinueCalc(){
+    static boolean continueCalc(){
         Scanner input = new Scanner(System.in);
         System.out.println("Продолжить?    Да / Нет");
         String x = input.nextLine();
@@ -63,7 +63,7 @@ public abstract class Calculations {
             return true;
         }
         else if(x.equals("Нет")) return false;
-        return ContinueCalc();
+        return continueCalc();
     }
 
     enum num_operations{

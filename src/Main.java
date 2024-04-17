@@ -9,9 +9,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        StartCalculator();
+        startCalculator();
     }
-    public static void StartCalculator(){
+    public static void startCalculator(){
         Scanner inp = new Scanner(System.in);
 
         System.out.println("Выберите систему исчисления базового числа:" +
@@ -21,27 +21,27 @@ public class Main {
                 "\n 4. Шеснадцатиричная");
         try {
             String numSystem = inp.nextLine();
-            if (!numSystem.matches("[1-4]")) StartCalculator();
+            if (!numSystem.matches("[1-4]")) startCalculator();
 
             switch (numSystem){
                 case "1":
                     System.out.println("Выбрана двоичная система");
-                    StartCalculatingNumbers(num_system.BIN);
+                    startCalculatingNumbers(num_system.BIN);
                     break;
 
                 case "2":
                     System.out.println("Выбрана восьмиричная система");
-                    StartCalculatingNumbers(num_system.OCT);
+                    startCalculatingNumbers(num_system.OCT);
                     break;
 
                 case "3":
                     System.out.println("Выбрана десятичная система");
-                    StartCalculatingNumbers(num_system.DEC);
+                    startCalculatingNumbers(num_system.DEC);
                     break;
 
                 case "4":
                     System.out.println("Выбрана шестнадцатиричная система");
-                    StartCalculatingNumbers(num_system.HEX);
+                    startCalculatingNumbers(num_system.HEX);
                     break;
 
             }
@@ -50,22 +50,22 @@ public class Main {
         }
 
     }
-    public static void StartCalculatingNumbers(num_system sys){
+    public static void startCalculatingNumbers(num_system sys){
 
         switch(sys){
-            case BIN -> {if(!Binary.StartCalculation()) StartCalculator(); }
-            case DEC -> {if(!Decimal.StartCalculation()) StartCalculator(); }
-            case HEX -> {if(!Hexadecimal.StartCalculation()) StartCalculator(); }
-            case OCT -> {if(!Octonar.StartCalculation()) StartCalculator(); }
+            case BIN -> {if(!Binary.startCalculation()) startCalculator(); }
+            case DEC -> {if(!Decimal.startCalculation()) startCalculator(); }
+            case HEX -> {if(!Hexadecimal.startCalculation()) startCalculator(); }
+            case OCT -> {if(!Octonar.startCalculation()) startCalculator(); }
         }
     }
 
-    public static void AllResultsOut(int number){
+    public static void allResultsOut(int number){
         System.out.println();
         System.out.println("Результат:");
-        Binary.ResultOut(number);
-        Octonar.ResultOut(number);
-        Decimal.ResultOut(number);
-        Hexadecimal.ResultOut(number);
+        Binary.resultOut(number);
+        Octonar.resultOut(number);
+        Decimal.resultOut(number);
+        Hexadecimal.resultOut(number);
     }
 }
